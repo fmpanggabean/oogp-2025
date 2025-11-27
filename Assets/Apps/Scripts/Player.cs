@@ -20,11 +20,13 @@ public class Player : MonoBehaviour
     void OnEnable()
     {
         PlayerInput.actions["Move"].performed += SetDirection;
+        PlayerInput.actions["Move"].canceled += SetDirection;
     }
 
     void OnDisable()
     {
         PlayerInput.actions["Move"].performed -= SetDirection;
+        PlayerInput.actions["Move"].canceled -= SetDirection;
     }
 
     public void SetDirection(Vector2 direction)
