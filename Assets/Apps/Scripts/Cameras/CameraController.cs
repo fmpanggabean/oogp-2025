@@ -1,5 +1,4 @@
 using Unity.Cinemachine;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class CameraController : MonoBehaviour
@@ -10,13 +9,7 @@ public class CameraController : MonoBehaviour
 
     void Awake()
     {
-        if (Instance != null)
-        {
-            Destroy(gameObject);
-            return;
-        }
         Instance = this;
-        DontDestroyOnLoad(gameObject);
 
         cinemachineCamera = GetComponentInChildren<CinemachineCamera>();
     }
